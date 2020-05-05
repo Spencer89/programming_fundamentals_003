@@ -128,66 +128,41 @@ const catalogue = [
   
   ];
 
-function countBooksByAuthor(author) {
- /*for (let property in obj){
-
- }
-
-}
-Q - Should obj be author??
-Q - How do I do a running count? Is it accumulator/value? or let count =0??
-Q - How do you let a loop run through various objects? In the example's 
-we looked at we were searching through one object at a time?(I think?)
-*/
+  function countBooksByAuthor(obj) {
+ 
+    let count = 0;
+  
+    for(let i = 0; i < catalogue.length; i++) {
+      if(catalogue[i].author === obj) {
+        count++;
+      }
+    }
+    return count;
+  }
+ 
 
 function checkBookByTitle(title) {
-  /*
-  
-  for (let property in obj){
-    if (obj[property]===title) 
-    {return true} 
-    else return false;
-  }
+
 }
-Q- should obj be title? How does it know to search titles if we use obj?
-*/
 
 function countBooksByFirstLetter(letter) {
-  /* for(let property in obj){
-
-  }
 
 }
-Q - How do you do a running count??
-I want to say - loop through books.title and for all titles that begin with a 
-specific letter if(letter === books.title[0])?? then add this to the count
 
-*/
 function getQuantity(title) {
-  /* for(
-  })
-  
-}
 
-I want to say - go through the given object
- and get the quantity value and return it...something to do with title.quantity??
- 
-*/
+}
 
 function getBooksByAuthor(author) {
-  /* Your code here
+
 }
 
-I want to say - go through all of the objects, and return the book.author that match
-a given author (=== author).
-*/
 function checkQuantity(title, quantity) {
-  /* Your code here
+ 
 }
 
-I want to say - loop through the objects untill you find a specific title and if the given quantity matches the actual quantity, 
-{return true} else {return false}
-*/
+
+
 
 
 module.exports = {
