@@ -25,7 +25,7 @@ describe("catalogueService.checkBookByTitle", () => {
 });
 
 //Q3 TEST
-describe.only("catalogueService", () => {
+describe("catalogueService", () => {
   describe("catalogueService.countBooksByFirstLetter", () => {
     test("receive a letter as an arguments and return the total number of books that begin with that letter", () => {
       expect(catalogueService.countBooksByFirstLetter("T")).toBe(5);
@@ -47,10 +47,38 @@ describe("catalogueService", () => {
 })
 
 //Q5 TEST***
+describe("catalogueService", () => {
+  describe("catalogueService.getBooksByAuthor", () => {
+    test("returns all book details from the given author", () => {
+      expect(catalogueService.getBooksByAuthor("Charles Darwin")).toEqual({
+        title: "The Origin Of Species",
+        author: "Charles Darwin",
+        quantity: 50,
+      });
+      expect(catalogueService.getBooksByAuthor("Charles Dickens")).toEqual({
+        title: "A Tale of Two Cities",
+        author: "Charles Dickens",
+        quantity: 3,
+      },
+    
+      {
+        title: "Oliver Twist",
+        author: "Charles Dickens",
+        quantity: 7
+      },
+    
+      {
+        title: "Great Expectations",
+        author: "Charles Dickens",
+        quantity: 1,
+      });
+    });
+  });
 
+})
 
 //Q6 TEST
-describe("catalogueService", () => {
+describe.only("catalogueService", () => {
   describe("catalogueService.checkQuantity", () => {
     test("recieves a title and a quantity as an argument and returns true if there are at least that many books in stock, and false if not", () => {
       expect(catalogueService.checkQuantity("Normal People", 1)).toBe(true);

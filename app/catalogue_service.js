@@ -148,48 +148,55 @@ function checkBookByTitle(title) {
   }
 }
 
-/*Q3 - ***INCOMPLETE***
-This function should receive a letter as an argument (e.g. "H") and return the total number
- of books that begin with this letter. Note that the quantity is not relevant here.
- Ensure it passes regardless of case*/
+//Q3 - COMPLETE
 
 function countBooksByFirstLetter(letter) {
   let count = 0;
   for (let i = 0; i < catalogue.length; i++) {
 
-    if (catalogue[i].charAt(0) === letter) {
+    if (catalogue[i].title.charAt(0) === letter) {
       count++
     }
   }
   return count;
 }
 
-/*Q4 - INCOMPLETE
-This function should receive a title as an argument (e.g. "The Origin of Species") and
- return the quantity of this item which is in stock*/
+//Q4 - COMPLETE
 
 function getQuantity(title) {
  for (let i=0; i< catalogue.length; i++){
-   return catalogue[title].quantity
+   if(catalogue[i].title === title)
+  // we're going to say:
+  // if catalogue[i].title is equal to the title we're getting passed in
+  // then I want to return catalogue[i] 's quantity (so .quantity)
+
+   return catalogue[i].quantity
  }
 }
 
-/*Q5 *no test*
+/*Q5 - COMPLETE
 This function should receive an author as an argument (e.g. "Robert Bolaño") and return
  an array of books*/
 
 function getBooksByAuthor(author) {
-
+  for (let i=0; i< catalogue.length; i++){
+    if (catalogue[i].author === author)
+    return catalogue[i]
+  }
 }
+
+
 /*Q6
 This function should receive a title and a quantity as an argument
- (e.g. "By Night In Chile" and 4) and return `true` if there are at least as many books
-  in stock as the given quantity, and false otherwise.*/
+ (e.g. "By Night In Chile" and 4) and return `true` if there are at least as many
+  books in stock as the given quantity, and false otherwise.*/
 function checkQuantity(title, quantity) {
-  
+  for (let i = 0; i < catalogue.length; i++) {
+    if  (catalogue[i].quantity=== quantity && catalogue[i].title)
+    return true; 
 
+  }
 }
-
 
 
 
