@@ -186,16 +186,19 @@ function getBooksByAuthor(author) {
 }
 
 
-/*Q6
+/*Q6  - COMPLETE
 This function should receive a title and a quantity as an argument
  (e.g. "By Night In Chile" and 4) and return `true` if there are at least as many
   books in stock as the given quantity, and false otherwise.*/
-function checkQuantity(title, quantity) {
-  for (let i = 0; i < catalogue.length; i++) {
-    if  (catalogue[i].quantity=== quantity && catalogue[i].title)
-    return true; 
 
+function checkQuantity(title, quantity){
+  let result = false;
+  for(let i = 0; i < catalogue.length; i++){
+    if (catalogue[i].title === title && catalogue[i].quantity >= quantity){
+      result = true;
+    }
   }
+  return result
 }
 
 
